@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.5
+#!/usr/bin/env python
 #Noah Gift
 #Greedy Coin Match Algorithms
 
@@ -111,13 +111,13 @@ class Change():
 
     def conditional_printer(self):
         """Print Method For Conditional Results
-        
+
         >>> c = Change(.71)
         >>> c.conditional_printer()
         Quarters 2
         Dimes 2
-        Pennies 1 
-        
+        Pennies 1
+
         """
         quarter, qrem, dime, drem, nickel, nrem, \
         penny = self.make_change_conditional()

@@ -16,13 +16,13 @@ class Change():
         self.coins = [1,5,10,25]
         self.coin_lookup = {25: "quarters", 10: "dimes", 5: "nickels", 1: "pennies"}
         if self.verbose:
-            print "Converted Change Value: %s" % self.convert
+            print("Converted Change Value: %s" % self.convert)
 
     def printer(self,num,coin):
         """Printing Method For Recursive Results and While Results"""
         if num:
             if coin in self.coin_lookup:
-                print num, self.coin_lookup[coin]
+                print(num, self.coin_lookup[coin])
 
     def recursive_change(self, rem):
         """Greedy Coin Match with Recursion
@@ -104,10 +104,10 @@ class Change():
         """Debug Print Method for Conditional Results"""
         quarter, qrem, dime, drem, nickel, nrem, \
         penny = self.make_change_conditional()
-        print "Quarters %s: , Remainder: %s" % (quarter,qrem)
-        print "Dimes %s: , Remainder: %s" % (dime,drem)
-        print "Nickles %s: , Remainder: %s" % (nickel,nrem)
-        print "Pennies %s:" % penny
+        print("Quarters %s: , Remainder: %s" % (quarter,qrem))
+        print("Dimes %s: , Remainder: %s" % (dime,drem))
+        print("Nickles %s: , Remainder: %s" % (nickel,nrem))
+        print("Pennies %s:" % penny)
 
     def conditional_printer(self):
         """Print Method For Conditional Results
@@ -122,13 +122,13 @@ class Change():
         quarter, qrem, dime, drem, nickel, nrem, \
         penny = self.make_change_conditional()
         if quarter:
-            print "Quarters %s" % quarter
+            print("Quarters %s" % quarter)
         if dime:
-            print "Dimes %s" % dime
+            print("Dimes %s" % dime)
         if nickel:
-            print "Nickles %s " % nickel
+            print("Nickles %s " % nickel)
         if penny:
-            print "Pennies %s " % penny
+            print("Pennies %s " % penny)
 
 def controller():
     p = optparse.OptionParser(description="Makes Change Using Greedy Coin Match",
@@ -153,7 +153,7 @@ def controller():
         try:
             value = decimal.Decimal(arguments[0])
         except decimal.InvalidOperation:
-            print "Please enter a valid number to make change"
+            print("Please enter a valid number to make change")
             sys.exit(1)
         c = Change(value)
         if options.full:

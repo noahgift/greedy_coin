@@ -46,7 +46,8 @@ class TestChange(unittest.TestCase):
         self.assertEqual(penny, 0)    #penny
     def test_large_number(self):
         c = change.Change(2.20)
-        quarter, qrem, dime, drem, nickel, nrem, penny = c.make_change_conditional()
+        quarter, qrem, dime, drem, nickel, nrem, penny =\
+            c.make_change_conditional()
         self.assertEqual(quarter, 8)  #nickel
         self.assertEqual(qrem, 20)  #nickel
         self.assertEqual(dime, 2)  #nickel
